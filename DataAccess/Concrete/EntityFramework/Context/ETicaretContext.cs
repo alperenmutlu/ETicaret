@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,8 @@ namespace DataAccess.Concrete.EntityFramework.Context
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ETicaret;Trusted_Connection=true");
         }
 
-        prop
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }
